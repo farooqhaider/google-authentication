@@ -1,0 +1,15 @@
+<%= form_for (@message), :html => { :multipart => true }, :remote => true do |f| %>
+  
+  <% if @message.errors.any? %>
+    <% @message.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+
+  <%= content_tag :div do%>
+    <%= f.label :message_text %>
+    <%= f.text_area :message_text, :id => "message_box" %>
+    <%= f.submit "Save Text" %>
+  <% end %>
+  
+<% end %>

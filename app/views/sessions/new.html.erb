@@ -1,0 +1,4 @@
+<%= content_tag :h3 do %>
+  <%= t("session.welcome")%>
+<% end %>
+<%= link_to "Signin with Google!", user_omniauth_authorize_url(:google_oauth2) %>

@@ -1,0 +1,7 @@
+<%= content_tag :div do %>
+  <%= message.message_text%>
+  <%= content_tag :i do %>
+    <%= "#{time_ago_in_words(message.created_at)} ago" %>
+  <% end %>
+  <%= link_to "Delete", message, :method => :delete %>
+<% end %>
