@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:destroy]
   
   def index
-    @messages = current_user.messages
+    @messages = Message.recent_messages(current_user)
     @message = Message.new
   end
   
